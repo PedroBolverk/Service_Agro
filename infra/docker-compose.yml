@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:16
+    container_name: service-agro-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: service_agro
+    ports:
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
