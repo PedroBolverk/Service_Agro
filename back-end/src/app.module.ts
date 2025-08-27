@@ -8,10 +8,11 @@ import { SolicitacoesServicosModule } from './solicitacoes-servicos/solicitacoes
 import { AtribuicoesServicosModule } from './atribuicoes-servicos/atribuicoes-servicos.module';
 import { MensagensModule } from './mensagens/mensagens.module';
 import { AvaliacoesModule } from './avaliacoes/avaliacoes.module';
+import { PrismaService } from 'prisma/prisma.service';
 
 @Module({
   imports: [AuthModule, UsuariosModule, MecanicosModule, SolicitacoesServicosModule, AtribuicoesServicosModule, MensagensModule, AvaliacoesModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, PrismaService],
 })
 export class AppModule {}

@@ -19,7 +19,7 @@ export class MecanicosController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.mecanicosService.findOne(+id);
+    return this.mecanicosService.findOne(id);
   }
 
   @Patch(':id')

@@ -206,7 +206,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\Pedro\\Área de Trabalho\\Service_Agro_MVP\\back-end\\generated\\prisma",
+      "value": "C:\\Users\\Pedro\\Área de Trabalho\\Service_Agro\\back-end\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -220,7 +220,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\Pedro\\Área de Trabalho\\Service_Agro_MVP\\back-end\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\Pedro\\Área de Trabalho\\Service_Agro\\back-end\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -234,6 +234,7 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
