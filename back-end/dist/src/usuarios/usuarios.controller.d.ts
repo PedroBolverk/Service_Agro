@@ -5,11 +5,11 @@ export declare class UsuariosController {
     private prisma;
     constructor(prisma: PrismaService);
     create(createUserDto: CreateUsuarioDto): Promise<{
-        id: string;
         email: string;
         password: string;
         fullName: string;
         role: import("@prisma/client").$Enums.Role;
+        id: string;
         phone: string | null;
         cpfCnpj: string | null;
         stateReg: string | null;
@@ -17,11 +17,11 @@ export declare class UsuariosController {
         updatedAt: Date;
     }>;
     findAll(): Promise<{
-        id: string;
         email: string;
         password: string;
         fullName: string;
         role: import("@prisma/client").$Enums.Role;
+        id: string;
         phone: string | null;
         cpfCnpj: string | null;
         stateReg: string | null;
@@ -29,11 +29,11 @@ export declare class UsuariosController {
         updatedAt: Date;
     }[]>;
     findOne(id: string): Promise<{
-        id: string;
         email: string;
         password: string;
         fullName: string;
         role: import("@prisma/client").$Enums.Role;
+        id: string;
         phone: string | null;
         cpfCnpj: string | null;
         stateReg: string | null;
@@ -41,11 +41,11 @@ export declare class UsuariosController {
         updatedAt: Date;
     } | null>;
     update(id: string, updateUsuarioDto: UpdateUsuarioDto): Promise<{
-        id: string;
         email: string;
         password: string;
         fullName: string;
         role: import("@prisma/client").$Enums.Role;
+        id: string;
         phone: string | null;
         cpfCnpj: string | null;
         stateReg: string | null;
@@ -53,11 +53,11 @@ export declare class UsuariosController {
         updatedAt: Date;
     }>;
     remove(id: string): Promise<{
-        id: string;
         email: string;
         password: string;
         fullName: string;
         role: import("@prisma/client").$Enums.Role;
+        id: string;
         phone: string | null;
         cpfCnpj: string | null;
         stateReg: string | null;

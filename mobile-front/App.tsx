@@ -1,47 +1,30 @@
-import React from "react";
+// mobile-front/App.tsx
+import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons'
-
-// Importando as telas
+import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from './screens/LoginScreen';
-import CadastroScreen from "./screens/CadastroScreen";
-import DashboardScreen from "./screens/DashboardScreen";
+import CadastroScreen from './screens/CadastroScreen';
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
-    return (
-        <NavigationContainer>
-            <Tab.Navigator initialRouteName="Login">
-                <Tab.Screen
-                    name="Login"
-                    component={LoginScreen}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <Ionicons name="log-in" size={size} color={color} />
-                        ),
-                    }}
-                />
-                <Tab.Screen
-                    name="Cadastro"
-                    component={CadastroScreen}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <Ionicons name="person-add" size={size} color={color} />
-                        ),
-                    }}
-                />
-                <Tab.Screen
-                    name="Dashboard"
-                    component={DashboardScreen}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <Ionicons name="home" size={size} color={color} />
-                        ),
-                    }}
-                />
-            </Tab.Navigator>
-        </NavigationContainer>
-    );
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        {!isAuthenticated ? (
+          <>
+            <Stack.Screen name="Login" options={{ headerShown: false }}>
+              {(props) => <LoginScreen {...props} setIsAuthenticated={setIsAuthenticated} />}
+            </Stack.Screen>
+            <Stack.Screen name="Cadastro" component={CadastroScreen} />
+          </>
+        ) : (
+          // Expo Router irá gerenciar a navegação por abas automaticamente
+          null
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
